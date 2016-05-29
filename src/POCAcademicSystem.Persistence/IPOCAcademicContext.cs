@@ -10,6 +10,6 @@ namespace POCAcademicSystem.Persistence
 {
     public interface IPOCAcademicContext : IUnitOfWork
     {
-        IStudentRepository StudentRepository {get;};
+        IStudentRepository StudentRepository {get;}
     }
 }
