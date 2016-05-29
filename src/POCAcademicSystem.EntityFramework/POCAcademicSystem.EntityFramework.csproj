@@ -56,6 +56,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappings\StudentMapping.cs" />
+    <Compile Include="Migrations\201605290333323_InitialCreate.cs" />
+    <Compile Include="Migrations\201605290333323_InitialCreate.Designer.cs">
+      <DependentUpon>201605290333323_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="POCAcademicContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +79,11 @@
       <Project>{78eabf25-5e0c-431f-afa2-636d4065811b}</Project>
       <Name>POCAcademicSystem.Persistence</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605290333323_InitialCreate.resx">
+      <DependentUpon>201605290333323_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

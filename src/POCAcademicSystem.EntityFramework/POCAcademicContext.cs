@@ -8,6 +8,7 @@ using POCAcademicSystem.Model;
 using Takenet.Library.Data.EntityFramework;
 using System.Data.Entity;
 using POCAcademicSystem.Persistence.Repository;
+using POCAcademicSystem.EntityFramework.Mappings;
 
 namespace POCAcademicSystem.EntityFramework
 {
@@ -28,6 +29,11 @@ namespace POCAcademicSystem.EntityFramework
         {
             _serviceProvider = serviceProvider;
             Configuration.ValidateOnSaveEnabled = false;
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new StudentMapping());
         }
 
         public IStudentRepository StudentRepository
