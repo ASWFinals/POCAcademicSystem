@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCAcademicUI", "..\POCAcad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCAcademicSystem.EntityFramework", "POCAcademicSystem.EntityFramework\POCAcademicSystem.EntityFramework.csproj", "{03FB29DA-CB28-4D89-B8A4-7D05325951E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCAcademicSystem.Model", "POCAcademicSystem.Model\POCAcademicSystem.Model.csproj", "{AE07BD5D-27FA-4013-A12D-95613E834BA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{24BD509D-E0A6-423E-A2A2-6D8373224752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCAcademicSystem.Persistence", "POCAcademicSystem.Persistence\POCAcademicSystem.Persistence.csproj", "{78EABF25-5E0C-431F-AFA2-636D4065811B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +39,21 @@ Global
 		{03FB29DA-CB28-4D89-B8A4-7D05325951E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FB29DA-CB28-4D89-B8A4-7D05325951E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03FB29DA-CB28-4D89-B8A4-7D05325951E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE07BD5D-27FA-4013-A12D-95613E834BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE07BD5D-27FA-4013-A12D-95613E834BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE07BD5D-27FA-4013-A12D-95613E834BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE07BD5D-27FA-4013-A12D-95613E834BA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EABF25-5E0C-431F-AFA2-636D4065811B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EABF25-5E0C-431F-AFA2-636D4065811B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EABF25-5E0C-431F-AFA2-636D4065811B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EABF25-5E0C-431F-AFA2-636D4065811B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03FB29DA-CB28-4D89-B8A4-7D05325951E2} = {24BD509D-E0A6-423E-A2A2-6D8373224752}
+		{AE07BD5D-27FA-4013-A12D-95613E834BA5} = {24BD509D-E0A6-423E-A2A2-6D8373224752}
+		{78EABF25-5E0C-431F-AFA2-636D4065811B} = {24BD509D-E0A6-423E-A2A2-6D8373224752}
 	EndGlobalSection
 EndGlobal

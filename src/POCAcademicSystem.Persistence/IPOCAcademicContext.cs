@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Takenet.Library.Data;
 
-namespace POCAcademicSystem.EntityFramework
+namespace POCAcademicSystem.Persistence
 {
-    public class Class1
+    public interface IPOCAcademicContext : IUnitOfWork
     {
     }
 }
