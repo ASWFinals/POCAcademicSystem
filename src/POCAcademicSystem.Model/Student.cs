@@ -9,5 +9,10 @@ namespace POCAcademicSystem.Model
     public class Student
     {
         public int StudentId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string ContactNumber { get; set; }
+        public DateTime? Enrolled { get; set; }
     }
 }
