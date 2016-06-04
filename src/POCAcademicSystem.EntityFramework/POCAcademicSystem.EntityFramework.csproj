@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201605290333323_InitialCreate.Designer.cs">
       <DependentUpon>201605290333323_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606041851395_StudentMappingsAndFields.cs" />
+    <Compile Include="Migrations\201606041851395_StudentMappingsAndFields.Designer.cs">
+      <DependentUpon>201606041851395_StudentMappingsAndFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="POCAcademicContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605290333323_InitialCreate.resx">
       <DependentUpon>201605290333323_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606041851395_StudentMappingsAndFields.resx">
+      <DependentUpon>201606041851395_StudentMappingsAndFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

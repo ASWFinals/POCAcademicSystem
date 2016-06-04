@@ -22,7 +22,7 @@ namespace POCAcademicSystem.EntityFramework.Mappings
 
             Property(s => s.LastName)
                 .HasMaxLength(50)
-                .IsRequired();
+                .IsRequired()
                 .IsUnicode(false); //avoid NVARCHAR(MAX)
 
             Property(s => s.Email)
@@ -30,8 +30,12 @@ namespace POCAcademicSystem.EntityFramework.Mappings
                 .IsUnicode(false)
                 .IsRequired();
 
+            Property(s => s.ContactNumber)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+
             Property(s => s.EnrollmentDate)
-                .IsRequired();
+                .IsOptional();
         }
     }
 }
