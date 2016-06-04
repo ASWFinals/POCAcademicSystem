@@ -46,6 +46,7 @@
     <Compile Include="IPOCAcademicContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ICourseRepository.cs" />
+    <Compile Include="Repository\IEnrollmentRepository.cs" />
     <Compile Include="Repository\IStudentRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -22,6 +22,7 @@ namespace POCAcademicSystem.EntityFramework.Mappings
                 .IsRequired()
                 .HasMaxLength(200)
                 .IsUnicode(false);
+            
         }
     }
 }

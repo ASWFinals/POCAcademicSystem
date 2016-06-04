@@ -13,5 +13,6 @@ namespace POCAcademicSystem.Model
         public byte Credits { get; set; }
 
         //TODO: ADD Enrollments and Department
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }

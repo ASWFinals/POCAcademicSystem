@@ -14,5 +14,7 @@ namespace POCAcademicSystem.Model
         public string Email { get; set; }
         public string ContactNumber { get; set; }
         public DateTime? EnrollmentDate { get; set; }
+
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }

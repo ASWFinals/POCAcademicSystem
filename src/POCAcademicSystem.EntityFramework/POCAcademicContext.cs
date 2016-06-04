@@ -18,6 +18,7 @@ namespace POCAcademicSystem.EntityFramework
 
         public IDbSet<Student> Students { get; set; }
         public IDbSet<Course> Courses { get; set; }
+        public IDbSet<Enrollment> Enrollments { get; set; }
 
         public POCAcademicContext()
             : base("POCAcademicSystemContext")
@@ -36,6 +37,7 @@ namespace POCAcademicSystem.EntityFramework
         {
             modelBuilder.Configurations.Add(new StudentMapping());
             modelBuilder.Configurations.Add(new CourseMapping());
+            modelBuilder.Configurations.Add(new EnrollmentMapping());
         }
 
         public IStudentRepository StudentRepository
@@ -51,6 +53,14 @@ namespace POCAcademicSystem.EntityFramework
             get
             {
                 return _serviceProvider.GetService(typeof(ICourseRepository)) as ICourseRepository;
+            }
+        }
+
+        public IEnrollmentRepository EnrollmentRepository
+        {
+            get
+            {
+                return _serviceProvider.GetService(typeof(IEnrollmentRepository)) as IEnrollmentRepository;
             }
         }
     }
