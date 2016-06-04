@@ -20,12 +20,14 @@ namespace POCAcademicSystem.EntityFramework.Mappings
 
             //Course
             HasRequired<Course>(e => e.Course) //enrollment entity requires course. Cannot save enrollment without Course
-                .WithMany(e => e.Enrollments); 
+                .WithMany(e => e.Enrollments)
+                .WillCascadeOnDelete(false); 
             
 
             //Student
             HasRequired<Student>(e => e.Student) //enrollment entity requires student. Cannot save enrollment without Student
-                .WithMany(e => e.Enrollments); 
+                .WithMany(e => e.Enrollments)
+                .WillCascadeOnDelete(false); 
 
         }
     }
