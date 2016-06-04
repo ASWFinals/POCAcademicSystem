@@ -13,6 +13,6 @@ namespace POCAcademicSystem.Model
         public string LastName { get; set; }
         public string Email { get; set; }
         public string ContactNumber { get; set; }
-        public DateTime? Enrolled { get; set; }
+        public DateTime? EnrollmentDate { get; set; }
     }
 }
