@@ -14,6 +14,24 @@ namespace POCAcademicSystem.EntityFramework.Mappings
         {
             ToTable("Student");
             HasKey(s => s.StudentId);
+
+            Property(s => s.FirstName)
+                .HasMaxLength(50)
+                .IsRequired()
+                .IsUnicode(false);
+
+            Property(s => s.LastName)
+                .HasMaxLength(50)
+                .IsRequired();
+                .IsUnicode(false); //avoid NVARCHAR(MAX)
+
+            Property(s => s.Email)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .IsRequired();
+
+            Property(s => s.EnrollmentDate)
+                .IsRequired();
         }
     }
 }
