@@ -17,6 +17,7 @@ namespace POCAcademicSystem.EntityFramework
         private readonly IServiceProvider _serviceProvider;
 
         public IDbSet<Student> Students { get; set; }
+        public IDbSet<Course> Courses { get; set; }
 
         public POCAcademicContext()
             : base("POCAcademicSystemContext")
@@ -34,6 +35,7 @@ namespace POCAcademicSystem.EntityFramework
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new StudentMapping());
+            modelBuilder.Configurations.Add(new CourseMapping());
         }
 
         public IStudentRepository StudentRepository
@@ -41,6 +43,14 @@ namespace POCAcademicSystem.EntityFramework
             get
             {
                 return _serviceProvider.GetService(typeof(IStudentRepository)) as IStudentRepository;
+            }
+        }
+
+        public ICourseRepository CourseRepository
+        {
+            get
+            {
+                return _serviceProvider.GetService(typeof(ICourseRepository)) as ICourseRepository;
             }
         }
     }
