@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201606042047422_AvoidCascadeDeleteEnrollmentMapping.Designer.cs">
       <DependentUpon>201606042047422_AvoidCascadeDeleteEnrollmentMapping.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606132351094_AddCourseInstructor.cs" />
+    <Compile Include="Migrations\201606132351094_AddCourseInstructor.Designer.cs">
+      <DependentUpon>201606132351094_AddCourseInstructor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="POCAcademicContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606042047422_AvoidCascadeDeleteEnrollmentMapping.resx">
       <DependentUpon>201606042047422_AvoidCascadeDeleteEnrollmentMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606132351094_AddCourseInstructor.resx">
+      <DependentUpon>201606132351094_AddCourseInstructor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

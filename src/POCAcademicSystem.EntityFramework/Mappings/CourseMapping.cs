@@ -22,6 +22,11 @@ namespace POCAcademicSystem.EntityFramework.Mappings
                 .IsRequired()
                 .HasMaxLength(200)
                 .IsUnicode(false);
+
+            Property(c => c.InstructorName)
+                .IsRequired()
+                .HasMaxLength(200)
+                .IsUnicode(false);
             
         }
     }
