@@ -54,6 +54,10 @@
       <Project>{ff371aad-1cd4-4151-bad2-958a0abe0596}</Project>
       <Name>POCAcademicSystem.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\POCAcademicSystem.Model\POCAcademicSystem.Model.csproj">
+      <Project>{ae07bd5d-27fa-4013-a12d-95613e834ba5}</Project>
+      <Name>POCAcademicSystem.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\POCAcademicSystem.Persistence\POCAcademicSystem.Persistence.csproj">
       <Project>{78eabf25-5e0c-431f-afa2-636d4065811b}</Project>
       <Name>POCAcademicSystem.Persistence</Name>
