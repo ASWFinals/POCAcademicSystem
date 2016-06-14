@@ -1,37 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using POCAcademicSystem.Model;
 using POCAcademicSystem.Persistence.Repository;
 
 namespace POCAcademicSystem.EntityFramework.Repository
 {
-    public class EnrollmentRepository : IEnrollmentRepository
+    public class EnrollmentRepository : POCAcademicRepository<Enrollment, int>, IEnrollmentRepository
     {
-        public void Add(Model.Enrollment entity, bool isNew)
+        public EnrollmentRepository(DbContext context)
+            : base(context)
         {
-            throw new NotImplementedException();
-        }
 
-        public IQueryable<Model.Enrollment> AsQueryable()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Model.Enrollment> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Model.Enrollment GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(Model.Enrollment entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
