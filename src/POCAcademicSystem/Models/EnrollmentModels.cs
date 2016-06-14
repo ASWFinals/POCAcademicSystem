@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace POCAcademicSystem.Models
+{
+    public class EnrollmentModels
+    {
+        public int EnrollmentId { get; set; }
+        public int CourseId { get; set; }
+        public int StudentId { get; set; }
+        public byte? Grade { get; set; }
+    }
+}

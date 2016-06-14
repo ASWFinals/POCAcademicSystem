@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Omu.ValueInjecter, Version=3.1.1.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\valueinjecter.3.1.1.2\lib\net40\Omu.ValueInjecter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SimpleInjector, Version=3.1.5.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.3.1.5\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
@@ -113,6 +117,14 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Takenet.Library.Data, Version=1.1.1.0, Culture=neutral, PublicKeyToken=0f09acaadd5a3cd6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Takenet.Library.Data.1.1.1.0\lib\net45\Takenet.Library.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Takenet.Library.Data.EntityFramework, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Takenet.Library.Data.EntityFramework.1.1.1.0\lib\net45\Takenet.Library.Data.EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -210,13 +222,17 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CourseModels.cs" />
+    <Compile Include="Models\EnrollmentModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\StudentModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -297,6 +313,18 @@
     <ProjectReference Include="..\POCAcademicSystem.Domain\POCAcademicSystem.Domain.csproj">
       <Project>{ff371aad-1cd4-4151-bad2-958a0abe0596}</Project>
       <Name>POCAcademicSystem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POCAcademicSystem.EntityFramework\POCAcademicSystem.EntityFramework.csproj">
+      <Project>{03fb29da-cb28-4d89-b8a4-7d05325951e2}</Project>
+      <Name>POCAcademicSystem.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POCAcademicSystem.Model\POCAcademicSystem.Model.csproj">
+      <Project>{ae07bd5d-27fa-4013-a12d-95613e834ba5}</Project>
+      <Name>POCAcademicSystem.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POCAcademicSystem.Persistence\POCAcademicSystem.Persistence.csproj">
+      <Project>{78eabf25-5e0c-431f-afa2-636d4065811b}</Project>
+      <Name>POCAcademicSystem.Persistence</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
