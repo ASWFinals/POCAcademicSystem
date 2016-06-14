@@ -8,6 +8,7 @@ using POCAcademicSystem.Persistence;
 using POCAcademicSystem.Persistence.Repository;
 using POCAcademicSystem.Model;
 using Takenet.Library.Data;
+using Omu.ValueInjecter;
 
 namespace POCAcademicSystem.Core.Engine
 {
@@ -21,8 +22,7 @@ namespace POCAcademicSystem.Core.Engine
             _unitOfWork = context;
             _studentRepository = context.StudentRepository;
         }
-
-        //TODO: regras de nogocio
+                
 
         public int Create(Student student)
         {
@@ -46,25 +46,48 @@ namespace POCAcademicSystem.Core.Engine
 
             if (student.StudentId != 0)
             {
-                //TODO: update model
-                //var studentModel = _studentRepository.GetById(student.StudentId);
-                //studentModel.ContactNumber = student.ContactNumber;
+                
+                var studentModel = _studentRepository.GetById(student.StudentId);
+                studentModel.InjectFrom(student);
+
+                _studentRepository.Add(studentModel, false);
+                _unitOfWork.Save();
             }
         }
 
         public void Delete(int studentId)
         {
-            throw new NotImplementedException();
+            var student = _studentRepository.GetById(studentId);
+            if (student == null)
+            {
+                throw new InvalidOperationException("Student entity does not exists");
+            }
+
+            _studentRepository.Remove(student);
+            _unitOfWork.Save();
         }
 
         public Student Get(int studentId)
         {
-            throw new NotImplementedException();
+            var student = _studentRepository.GetById(studentId);
+
+            if (student != null)
+            {
+                return student;
+            }
+
+            throw new InvalidOperationException("Student entity does not exists");
         }
 
         public IEnumerable<Student> GetAll()
         {
-            throw new NotImplementedException();
+            var students = _studentRepository.AsQueryable();
+            if (students.Any())
+            {
+                return students.ToList();
+            }
+
+            throw new InvalidOperationException("There is no student");
         }
     }
 }
