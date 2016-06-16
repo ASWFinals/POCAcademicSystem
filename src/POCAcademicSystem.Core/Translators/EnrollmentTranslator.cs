@@ -18,8 +18,6 @@ namespace POCAcademicSystem.Core.Translators
                 CourseId = enrollmentModel.CourseId,
                 Grade = enrollmentModel.Grade,
                 StudentId = enrollmentModel.StudentId,
-                Course = enrollmentModel.Course.ToDomain(),
-                Student = enrollmentModel.Student.ToDomain()
             };
         }
 
@@ -30,9 +28,7 @@ namespace POCAcademicSystem.Core.Translators
                 EnrollmentId = enrollmentDomain.EnrollmentId,
                 CourseId = enrollmentDomain.CourseId,
                 Grade = enrollmentDomain.Grade,
-                StudentId = enrollmentDomain.StudentId,
-                Course = enrollmentDomain.Course.ToPersistence(),
-                Student = enrollmentDomain.Student.ToPersistence()
+                StudentId = enrollmentDomain.StudentId
             };
         }
     }

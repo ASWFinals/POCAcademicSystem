@@ -11,6 +11,11 @@ namespace POCAcademicSystem.Domain.Model
     [Serializable]
     public class StudentDomain
     {
+        public StudentDomain()
+        {
+            Enrollments = new List<EnrollmentDomain>();
+        }
+
         [DataMember(EmitDefaultValue = false)]
         public int StudentId { get; set; }
 
@@ -31,6 +36,6 @@ namespace POCAcademicSystem.Domain.Model
 
 
         [DataMember(EmitDefaultValue = false)]
-        public ICollection<EnrollmentDomain> Enrollments { get; set; }
+        public IEnumerable<EnrollmentDomain> Enrollments { get; set; }
     }
 }

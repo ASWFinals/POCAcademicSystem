@@ -20,7 +20,8 @@ namespace POCAcademicSystem.Core.Translators
                 Email = studentModel.Email,
                 ContactNumber = studentModel.ContactNumber,
                 EnrollmentDate = studentModel.EnrollmentDate,
-                Enrollments = studentModel.Enrollments.Select(e => e.ToDomain()).ToList()
+                Enrollments = studentModel.Enrollments != null ? studentModel.Enrollments.Select(e => e.ToDomain()).ToList()
+                                                                : null
             };
         }
 
@@ -34,7 +35,8 @@ namespace POCAcademicSystem.Core.Translators
                 Email = studentDomain.Email,
                 ContactNumber = studentDomain.ContactNumber,
                 EnrollmentDate = studentDomain.EnrollmentDate,
-                Enrollments = studentDomain.Enrollments.Select(e => e.ToPersistence()).ToList()
+                Enrollments = studentDomain.Enrollments != null ? studentDomain.Enrollments.Select(e => e.ToPersistence()).ToList()
+                                                                : null
             };
         }
     }

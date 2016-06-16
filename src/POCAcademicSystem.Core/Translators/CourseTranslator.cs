@@ -16,7 +16,9 @@ namespace POCAcademicSystem.Core.Translators
             {
                 CourseId = courseModel.CourseId,
                 Credits = courseModel.Credits,
-                Enrollments = courseModel.Enrollments.Select(e => e.ToDomain()).ToList(),
+                Enrollments = courseModel.Enrollments != null 
+                                                ? courseModel.Enrollments.Select(e => e.ToDomain()).ToList()
+                                                : null,
                 InstructorName = courseModel.InstructorName,
                 Title = courseModel.Title
             };
@@ -28,7 +30,9 @@ namespace POCAcademicSystem.Core.Translators
             {
                 CourseId = courseDomain.CourseId,
                 Credits = courseDomain.Credits,
-                Enrollments = courseDomain.Enrollments.Select(e => e.ToPersistence()).ToList(),
+                Enrollments = courseDomain.Enrollments != null 
+                                                ? courseDomain.Enrollments.Select(e => e.ToPersistence()).ToList()
+                                                : null,
                 InstructorName = courseDomain.InstructorName,
                 Title = courseDomain.Title
             };

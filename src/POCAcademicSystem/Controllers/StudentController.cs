@@ -5,8 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using POCAcademicSystem.Domain.Engine;
-using POCAcademicSystem.Models;
-using Omu.ValueInjecter;
+using POCAcademicSystem.Domain.Model;
 
 namespace POCAcademicSystem.Controllers
 {
@@ -20,38 +19,37 @@ namespace POCAcademicSystem.Controllers
         }
 
         // GET: api/Student
-        public List<StudentModels> Get()
+        public IEnumerable<StudentDomain> Get()
         {
-            var studentsModels = new List<StudentModels>();
-            studentsModels.InjectFrom(_studentEngine.GetAll().ToList());
+            var result = _studentEngine.GetAll();
 
-            return studentsModels;
+            return result;
         }
 
         // GET: api/Student/5
-        public StudentModels Get(int id)
+        public StudentDomain Get(int id)
         {
             var studentDomain = _studentEngine.Get(id);
 
-            var studentModels = new StudentModels();
-            studentModels.InjectFrom(studentDomain);
+            //var studentModels = new StudentModels();
+            //studentModels.InjectFrom(studentDomain);
 
-            List<EnrollmentModels> enrollmentViewModelList = 
-                studentDomain.Enrollments
-                            .Select(x => new EnrollmentModels().InjectFrom(x)).Cast<EnrollmentModels>()
-                            .ToList();
+            //List<EnrollmentModels> enrollmentViewModelList = 
+            //    studentDomain.Enrollments
+            //                .Select(x => new EnrollmentModels().InjectFrom(x)).Cast<EnrollmentModels>()
+            //                .ToList();
 
-            studentModels.Enrollments = enrollmentViewModelList;
-            return studentModels;
+            //studentModels.Enrollments = enrollmentViewModelList;
+            return studentDomain;
         }
 
         // POST: api/Student
-        public void Post([FromBody]StudentModels value)
+        public void Post([FromBody]StudentDomain value)
         {
         }
 
         // PUT: api/Student/5
-        public void Put(int id, [FromBody]StudentModels value)
+        public void Put(int id, [FromBody]StudentDomain value)
         {
         }
 
