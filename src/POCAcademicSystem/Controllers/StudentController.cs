@@ -31,15 +31,6 @@ namespace POCAcademicSystem.Controllers
         {
             var studentDomain = _studentEngine.Get(id);
 
-            //var studentModels = new StudentModels();
-            //studentModels.InjectFrom(studentDomain);
-
-            //List<EnrollmentModels> enrollmentViewModelList = 
-            //    studentDomain.Enrollments
-            //                .Select(x => new EnrollmentModels().InjectFrom(x)).Cast<EnrollmentModels>()
-            //                .ToList();
-
-            //studentModels.Enrollments = enrollmentViewModelList;
             return studentDomain;
         }
 
