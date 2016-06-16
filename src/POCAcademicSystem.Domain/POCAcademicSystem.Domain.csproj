@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,13 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\IStudentEngine.cs" />
+    <Compile Include="Model\CourseDomain.cs" />
+    <Compile Include="Model\EnrollmentDomain.cs" />
+    <Compile Include="Model\StudentDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\POCAcademicSystem.Model\POCAcademicSystem.Model.csproj">
-      <Project>{ae07bd5d-27fa-4013-a12d-95613e834ba5}</Project>
-      <Name>POCAcademicSystem.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

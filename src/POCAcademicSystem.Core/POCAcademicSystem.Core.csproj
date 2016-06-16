@@ -49,6 +49,9 @@
   <ItemGroup>
     <Compile Include="Engine\StudentEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translators\CourseTranslator.cs" />
+    <Compile Include="Translators\EnrollmentTranslator.cs" />
+    <Compile Include="Translators\StudentTranslator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

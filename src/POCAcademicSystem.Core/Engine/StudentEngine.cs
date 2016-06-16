@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using POCAcademicSystem.Domain.Engine;
 using POCAcademicSystem.Persistence;
 using POCAcademicSystem.Persistence.Repository;
-using POCAcademicSystem.Model;
+using POCAcademicSystem.Domain.Model;
+using POCAcademicSystem.Core.Translators;
 using Takenet.Library.Data;
 using Omu.ValueInjecter;
 
@@ -24,20 +25,22 @@ namespace POCAcademicSystem.Core.Engine
         }
                 
 
-        public int Create(Student student)
+        public int Create(StudentDomain student)
         {
             if (student == null)
             {
                 throw new InvalidOperationException("Student entity is null");
             }
 
-            _studentRepository.Add(student, true);
+            var studentModel = student.ToPersistence();
+
+            _studentRepository.Add(studentModel, true);
             _unitOfWork.Save();
 
             return student.StudentId;
         }
 
-        public void Update(Student student)
+        public void Update(StudentDomain student)
         {
             if (student == null)
             {
@@ -67,24 +70,24 @@ namespace POCAcademicSystem.Core.Engine
             _unitOfWork.Save();
         }
 
-        public Student Get(int studentId)
+        public StudentDomain Get(int studentId)
         {
-            var student = _studentRepository.GetById(studentId);
+            var studentModel = _studentRepository.GetById(studentId);
 
-            if (student != null)
+            if (studentModel != null)
             {
-                return student;
+                return studentModel.ToDomain();
             }
 
             throw new InvalidOperationException("Student entity does not exists");
         }
 
-        public IEnumerable<Student> GetAll()
+        public IEnumerable<StudentDomain> GetAll()
         {
             var students = _studentRepository.AsQueryable();
             if (students.Any())
             {
-                return students.ToList();
+                return students.ToList().Select(s => s.ToDomain());
             }
 
             throw new InvalidOperationException("There is no student");
