@@ -4,30 +4,40 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using POCAcademicSystem.Domain.Engine;
+using POCAcademicSystem.Domain.Model;
 
 namespace POCAcademicSystem.Controllers
 {
     public class EnrollmentController : ApiController
     {
-        // GET: api/Enrollment
-        public IEnumerable<string> Get()
+        private readonly IEnrollmentEngine _enrollmentEngine;
+
+        //using dependency injection
+        public EnrollmentController(IEnrollmentEngine enrollmentEngine)
         {
-            return new string[] { "value1", "value2" };
+            _enrollmentEngine = enrollmentEngine;
+        }
+
+        // GET: api/Enrollment
+        public IEnumerable<EnrollmentDomain> Get()
+        {
+            return _enrollmentEngine.GetAll();
         }
 
         // GET: api/Enrollment/5
-        public string Get(int id)
+        public EnrollmentDomain Get(int id)
         {
-            return "value";
+            return _enrollmentEngine.Get(id);
         }
 
         // POST: api/Enrollment
-        public void Post([FromBody]string value)
+        public void Post([FromBody]EnrollmentDomain value)
         {
         }
 
         // PUT: api/Enrollment/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]EnrollmentDomain value)
         {
         }
 

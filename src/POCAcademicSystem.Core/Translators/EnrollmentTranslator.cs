@@ -18,6 +18,7 @@ namespace POCAcademicSystem.Core.Translators
                 CourseId = enrollmentModel.CourseId,
                 Grade = enrollmentModel.Grade,
                 StudentId = enrollmentModel.StudentId,
+                //Student = enrollmentModel.Student.ToDomain(false)
             };
         }
 

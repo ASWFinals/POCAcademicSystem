@@ -69,7 +69,7 @@ namespace POCAcademicSystem.Core.Engine
             if (enrollmentModels.Any())
             {
                 //foreach enrollment in repository, translate them.
-                return enrollmentModels.Select(e => e.ToDomain());
+                return enrollmentModels.ToList().Select(e => e.ToDomain());
             }
 
             throw new InvalidOperationException("There are no enrollment");

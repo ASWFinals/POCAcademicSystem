@@ -33,7 +33,9 @@ namespace POCAcademicSystem
             //LifeScope
             container.Register<IPOCAcademicContext>(() => new POCAcademicContext(container.GetInstance<IServiceProvider>()), Lifestyle.Scoped);
             container.Register<DbContext>(() => container.GetInstance<IPOCAcademicContext>() as DbContext, Lifestyle.Scoped);
+            //Engines
             container.Register<IStudentEngine, StudentEngine>(Lifestyle.Scoped);
+            container.Register<IEnrollmentEngine, EnrollmentEngine>(Lifestyle.Scoped);
 
             //register repository
             container.Register<IStudentRepository, StudentRepository>(Lifestyle.Scoped);
