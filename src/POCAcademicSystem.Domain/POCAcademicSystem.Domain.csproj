@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\IEnrollmentEngine.cs" />
     <Compile Include="Engine\IStudentEngine.cs" />
     <Compile Include="Model\CourseDomain.cs" />
     <Compile Include="Model\EnrollmentDomain.cs" />
