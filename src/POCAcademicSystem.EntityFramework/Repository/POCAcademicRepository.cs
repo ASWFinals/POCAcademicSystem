@@ -39,7 +39,7 @@ namespace POCAcademicSystem.EntityFramework.Repository
 
         public new virtual void Remove(TEntity entity)
         {
-            Add(entity, false);
+            base.Remove(entity);
         }
     }
 }
