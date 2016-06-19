@@ -9,6 +9,7 @@ using POCAcademicSystem.Persistence.Repository;
 using Takenet.Library.Data;
 using POCAcademicSystem.Core.Translators;
 using Omu.ValueInjecter;
+using POCAcademicSystem.Domain.Exceptions;
 
 namespace POCAcademicSystem.Core.Engine
 {
@@ -27,7 +28,7 @@ namespace POCAcademicSystem.Core.Engine
         {
             if (enrollmentDomain == null)
             {
-                throw new InvalidOperationException("Enrollment entity is null");
+                throw new InvalidRequestException("Enrollment entity is null");
             }
 
             //translating DTOs
@@ -45,7 +46,7 @@ namespace POCAcademicSystem.Core.Engine
 
             if (enrollmentModel == null)
             {
-                throw new InvalidOperationException("Enrollment entity does not exists");
+                throw new NotFoundException("Enrollment entity does not exists");
             }
 
             return enrollmentModel.ToDomain();
@@ -55,7 +56,7 @@ namespace POCAcademicSystem.Core.Engine
         {
             if (enrollmentDomain == null)
             {
-                throw new InvalidOperationException("Entidade não pode ser nula");
+                throw new InvalidRequestException("Entidade não pode ser nula");
             }
 
             if (enrollmentDomain.EnrollmentId != 0)
@@ -75,7 +76,7 @@ namespace POCAcademicSystem.Core.Engine
 
             if (enrollmentModel == null)
             {
-                throw new InvalidOperationException("Entidade não existe");
+                throw new NotFoundException("Entidade não existe");
             }
             _enrollmentRepository.Remove(enrollmentModel);
             _unitOfWork.Save();
@@ -92,7 +93,7 @@ namespace POCAcademicSystem.Core.Engine
                 return enrollmentModels.ToList().Select(e => e.ToDomain());
             }
 
-            throw new InvalidOperationException("There are no enrollment");
+            throw new NotFoundException("There are no enrollment");
         }
     }
 }
