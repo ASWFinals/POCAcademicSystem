@@ -44,6 +44,7 @@ namespace POCAcademicSystem.Controllers
         // DELETE: api/Enrollment/5
         public void Delete(int id)
         {
+            _enrollmentEngine.Delete(id);
         }
     }
 }
