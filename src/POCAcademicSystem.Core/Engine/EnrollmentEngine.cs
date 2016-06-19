@@ -8,6 +8,7 @@ using POCAcademicSystem.Persistence;
 using POCAcademicSystem.Persistence.Repository;
 using Takenet.Library.Data;
 using POCAcademicSystem.Core.Translators;
+using Omu.ValueInjecter;
 
 namespace POCAcademicSystem.Core.Engine
 {
@@ -52,14 +53,33 @@ namespace POCAcademicSystem.Core.Engine
 
         public void Update(Domain.Model.EnrollmentDomain enrollmentDomain)
         {
-            //TODO: finish the update
-            throw new NotImplementedException();
+            if (enrollmentDomain == null)
+            {
+                throw new InvalidOperationException("Entidade não pode ser nula");
+            }
+
+            if (enrollmentDomain.EnrollmentId != 0)
+            {
+                var enrollmentModel = _enrollmentRepository.GetById(enrollmentDomain.EnrollmentId);
+                enrollmentModel.InjectFrom(enrollmentDomain);
+
+                _enrollmentRepository.Add(enrollmentModel, false);
+                _unitOfWork.Save();
+            }
+
         }
 
         public void Delete(int id)
         {
-            //TODO: finish the delete
-            throw new NotImplementedException();
+            var enrollmentModel = _enrollmentRepository.GetById(id);
+
+            if (enrollmentModel == null)
+            {
+                throw new InvalidOperationException("Entidade não existe");
+            }
+            _enrollmentRepository.Remove(enrollmentModel);
+            _unitOfWork.Save();
+
         }
 
         public IEnumerable<Domain.Model.EnrollmentDomain> GetAll()
