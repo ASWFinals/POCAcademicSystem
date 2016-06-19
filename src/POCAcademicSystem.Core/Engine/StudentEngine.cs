@@ -10,6 +10,7 @@ using POCAcademicSystem.Domain.Model;
 using POCAcademicSystem.Core.Translators;
 using Takenet.Library.Data;
 using Omu.ValueInjecter;
+using POCAcademicSystem.Domain.Exceptions;
 
 namespace POCAcademicSystem.Core.Engine
 {
@@ -29,7 +30,7 @@ namespace POCAcademicSystem.Core.Engine
         {
             if (student == null)
             {
-                throw new InvalidOperationException("Student entity is null");
+                throw new InvalidRequestException("Student entity is null");
             }
 
             var studentModel = student.ToPersistence();
@@ -44,7 +45,7 @@ namespace POCAcademicSystem.Core.Engine
         {
             if (student == null)
             {
-                throw new InvalidOperationException("Student entity is null");
+                throw new InvalidRequestException("Student entity is null");
             }
 
             if (student.StudentId != 0)
@@ -63,7 +64,7 @@ namespace POCAcademicSystem.Core.Engine
             var student = _studentRepository.GetById(studentId);
             if (student == null)
             {
-                throw new InvalidOperationException("Student entity does not exists");
+                throw new NotFoundException("Student entity does not exists");
             }
 
             _studentRepository.Remove(student);
@@ -79,7 +80,7 @@ namespace POCAcademicSystem.Core.Engine
                 return studentModel.ToDomain();
             }
 
-            throw new InvalidOperationException("Student entity does not exists");
+            throw new NotFoundException("Student entity does not exists");
         }
 
         public IEnumerable<StudentDomain> GetAll()
@@ -90,7 +91,7 @@ namespace POCAcademicSystem.Core.Engine
                 return students.ToList().Select(s => s.ToDomain());
             }
 
-            throw new InvalidOperationException("There is no student");
+            throw new NotFoundException("There is no student");
         }
     }
 }
