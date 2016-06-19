@@ -11,6 +11,7 @@ using POCAcademicSystem.Core.Engine;
 using POCAcademicSystem.Domain.Engine;
 using POCAcademicSystem.EntityFramework;
 using POCAcademicSystem.EntityFramework.Repository;
+using POCAcademicSystem.Handlers;
 using POCAcademicSystem.Persistence;
 using POCAcademicSystem.Persistence.Repository;
 using SimpleInjector;
@@ -67,6 +68,9 @@ namespace POCAcademicSystem
 
             //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             //GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);  
+
+            //Custom Handler
+            GlobalConfiguration.Configuration.Filters.Add(new ResultHandler());
 
             GlobalConfiguration.Configuration.DependencyResolver =
                 new SimpleInjectorWebApiDependencyResolver(container);
