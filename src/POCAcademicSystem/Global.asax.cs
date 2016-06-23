@@ -37,6 +37,7 @@ namespace POCAcademicSystem
             //Engines
             container.Register<IStudentEngine, StudentEngine>(Lifestyle.Scoped);
             container.Register<IEnrollmentEngine, EnrollmentEngine>(Lifestyle.Scoped);
+            container.Register<ICourseEngine, CourseEngine>(Lifestyle.Scoped);
 
             //register repository
             container.Register<IStudentRepository, StudentRepository>(Lifestyle.Scoped);
