@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\CourseEngine.cs" />
     <Compile Include="Engine\EnrollmentEngine.cs" />
     <Compile Include="Engine\StudentEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
