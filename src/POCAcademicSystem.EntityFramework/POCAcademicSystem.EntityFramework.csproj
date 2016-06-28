@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Mappings\CourseMapping.cs" />
     <Compile Include="Mappings\EnrollmentMapping.cs" />
+    <Compile Include="Mappings\ServiceRequestMapping.cs" />
     <Compile Include="Mappings\ServiceTypeMapping.cs" />
     <Compile Include="Mappings\StudentMapping.cs" />
     <Compile Include="Migrations\201605290333323_InitialCreate.cs" />
@@ -83,6 +84,10 @@
     <Compile Include="Migrations\201606132351094_AddCourseInstructor.cs" />
     <Compile Include="Migrations\201606132351094_AddCourseInstructor.Designer.cs">
       <DependentUpon>201606132351094_AddCourseInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606280152085_CreateServiceRequest.cs" />
+    <Compile Include="Migrations\201606280152085_CreateServiceRequest.Designer.cs">
+      <DependentUpon>201606280152085_CreateServiceRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="POCAcademicContext.cs" />
@@ -126,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606132351094_AddCourseInstructor.resx">
       <DependentUpon>201606132351094_AddCourseInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606280152085_CreateServiceRequest.resx">
+      <DependentUpon>201606280152085_CreateServiceRequest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -40,6 +40,8 @@ namespace POCAcademicSystem.EntityFramework
             modelBuilder.Configurations.Add(new StudentMapping());
             modelBuilder.Configurations.Add(new CourseMapping());
             modelBuilder.Configurations.Add(new EnrollmentMapping());
+            modelBuilder.Configurations.Add(new ServiceTypeMapping());
+            modelBuilder.Configurations.Add(new ServiceRequestMapping());
         }
 
         public IStudentRepository StudentRepository
