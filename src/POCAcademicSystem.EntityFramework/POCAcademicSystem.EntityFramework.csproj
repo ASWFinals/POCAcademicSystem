@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Mappings\CourseMapping.cs" />
     <Compile Include="Mappings\EnrollmentMapping.cs" />
+    <Compile Include="Mappings\ServiceTypeMapping.cs" />
     <Compile Include="Mappings\StudentMapping.cs" />
     <Compile Include="Migrations\201605290333323_InitialCreate.cs" />
     <Compile Include="Migrations\201605290333323_InitialCreate.Designer.cs">
