@@ -13,5 +13,7 @@ namespace POCAcademicSystem.Persistence
         IStudentRepository StudentRepository { get; }
         ICourseRepository CourseRepository { get; }
         IEnrollmentRepository EnrollmentRepository { get; }
+        IServiceTypeRepository ServiceTypeRepository { get; }
+        IServiceRequestRepository ServiceRequestRepository { get; }
     }
 }

@@ -8,7 +8,7 @@ using Takenet.Library.Data;
 
 namespace POCAcademicSystem.Persistence.Repository
 {
-    public interface IServiceRequest : IEntityRepository<ServiceRequest, int>
+    public interface IServiceRequestRepository : IEntityRepository<ServiceRequest, int>
     {
     }
 }
