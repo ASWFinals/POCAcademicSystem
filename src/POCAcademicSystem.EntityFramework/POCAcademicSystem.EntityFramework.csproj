@@ -89,6 +89,8 @@
     <Compile Include="Repository\CourseRepository.cs" />
     <Compile Include="Repository\EnrollmentRepository.cs" />
     <Compile Include="Repository\POCAcademicRepository.cs" />
+    <Compile Include="Repository\ServiceRequestRepository.cs" />
+    <Compile Include="Repository\ServiceTypeRepository.cs" />
     <Compile Include="Repository\StudentRepository.cs" />
   </ItemGroup>
   <ItemGroup>
